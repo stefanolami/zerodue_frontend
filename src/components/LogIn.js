@@ -15,7 +15,7 @@ const LogIn = (props) => {
         props.context.actions.logIn(username, password)
             .then(res => {
                 if (res !== null) {
-                    navigate("/home")
+                    navigate("/")
                 } else {
                     setError("Sign in was unsuccessful")
                 }

@@ -21,7 +21,7 @@ const AddShop = (props) => {
             .then(res => {
                 if (res) {
                     setSubmitted('Negozio Creato!')
-                    setTimeout(() => navigate("/home"), 1500)
+                    setTimeout(() => navigate("/"), 1500)
                 } else if (res.status === 400) {
                     setErrors("Inserisci un nome");
                 }

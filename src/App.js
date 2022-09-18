@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -17,7 +17,6 @@ import NotFound from './components/NotFound';
 import Error from './components/Error';
 import PrivateRoute from './components/PrivateRoute';
 import LogIn from './components/LogIn';
-import WelcomeToDemo from './components/WelcomeToDemo';
 
 import withContext from './Context';
 
@@ -42,9 +41,8 @@ function App() {
       <div className="App">
         <HeaderWithContext />
         <Routes>
-          <Route path="/" element={<Navigate to="/welcome" /> } />
           <Route element={<PrivateRouteWithContext />}>
-            <Route path="/home" element={<HomeWithContext />} />
+            <Route path="/" element={<HomeWithContext />} />
             <Route path="/add-shop" element={<AddShopWithContext />} />
             <Route path="/shop/:id" element={<ShopWithContext />} />
             <Route path="/orders-history/:id" element={<OrdersHistoryWithContext />} />
@@ -56,8 +54,7 @@ function App() {
             <Route path="/last-added" element={<LastAddedShopsWithContext />} />
             <Route path="/update/:id" element={<UpdateShopWithContext />} />
           </Route>
-          <Route path="/log-in" element={<LogInWithContext />} /> 
-          <Route path="/welcome" element={<WelcomeToDemo />} />
+          <Route path="/log-in" element={<LogInWithContext />} />
           <Route path="/notfound" element={<NotFound />} />
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<NotFound />} />

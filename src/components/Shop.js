@@ -18,7 +18,7 @@ const Shop = (props) => {
             .then(res => {
                 if (res === true) {
                     setSubmitted('Negozio Cancellato!')
-                    setTimeout(() => navigate("/home"), 1500)
+                    setTimeout(() => navigate("/"), 1500)
                 } else {
                     navigate('/error');
                 }
