@@ -6,7 +6,7 @@ export default class Methods {
   * @return  {function}  fetch - fetch with the desired options
   */
   api(path, method = 'GET', body = null) {
-    const url = 'https://zerodue-demo-backend.herokuapp.com/api' + path;
+    const url = 'https://zerodue-backend.herokuapp.com/api' + path;
   
     const options = {
       method,
