@@ -53,9 +53,9 @@ const SelectComponent = React.forwardRef( ({
                         <div className="input-arrow-div">
                             <i className="input-arrow" />
                         </div>
-                        {
+                        {/* {
                             inputValue ? <div onClick={clearDropdown} className="input-clear-div">x</div> : null
-                        }
+                        } */}
                     </div>
                     <div className={`dropdown ${open ? "visible" : ""}`} id="dropdown" >
                         {

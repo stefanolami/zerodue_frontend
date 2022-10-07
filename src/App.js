@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -54,7 +54,7 @@ function App() {
             <Route path="/last-added" element={<LastAddedShopsWithContext />} />
             <Route path="/update/:id" element={<UpdateShopWithContext />} />
           </Route>
-          <Route path="/log-in" element={<LogInWithContext />} />
+          <Route path="/log-in" element={<LogInWithContext />} /> 
           <Route path="/notfound" element={<NotFound />} />
           <Route path="/error" element={<Error />} />
           <Route path="*" element={<NotFound />} />

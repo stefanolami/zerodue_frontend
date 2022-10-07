@@ -26,10 +26,10 @@ const Error = () => {
                 <title>ZeroDue - Error</title>
             </Helmet>
             <Navigation />
-            <div className="error">
+            <div className="error main">
                 <h1>Error</h1>
                 <h3>Sorry, an unexpected error has occurred</h3>
-                <button onClick={goBack}>Back</button>
+                <button className="error-btn button" onClick={goBack}>Back</button>
             </div>
         </React.Fragment>
     )

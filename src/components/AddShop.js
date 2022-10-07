@@ -21,7 +21,7 @@ const AddShop = (props) => {
             .then(res => {
                 if (res) {
                     setSubmitted('Negozio Creato!')
-                    setTimeout(() => navigate("/"), 1500)
+                    setTimeout(() => navigate("/home"), 1500)
                 } else if (res.status === 400) {
                     setErrors("Inserisci un nome");
                 }
@@ -41,14 +41,16 @@ const AddShop = (props) => {
                 <title>ZeroDue - Add Shop</title>
             </Helmet>
             <Navigation />
-            <Form 
-                submit={submit}
-                errors={errors}
-                title="Aggiungi Negozio"
-                button="Aggiungi"
-                update={false}
-                submitted={submitted}
-            />
+            <div className="add-shop main">
+                <Form 
+                    submit={submit}
+                    errors={errors}
+                    title="Aggiungi Negozio"
+                    button="Aggiungi"
+                    update={false}
+                    submitted={submitted}
+                />
+            </div>
         </React.Fragment>
     )
 }

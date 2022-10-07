@@ -79,13 +79,17 @@ const AdvancedSearch = (props) => {
         
         if (orderBy === "ultimo contatto") {
             newOrderBy = "ultimo_contatto"
+        } else if (orderBy === "") {
+            newOrderBy = "ultimo_contatto"
         } else {
             newOrderBy = orderBy
         }
-    
+        console.log(orderBy, newOrderBy)
         props.context.actions.searchAdvanced(newOrderBy, direction, query)
             .then(res => {
                 if (res === null) {
+                    console.log(res)
+                    
                     navigate("/notfound")
                 } else {
                     setShopsList(res)
@@ -148,43 +152,45 @@ const AdvancedSearch = (props) => {
                 <title>ZeroDue - Advanced Search</title>
             </Helmet>
             <Navigation />
-            {
-                showList ? (
-                    <button className="advanced-search-btn" onClick={() => newSearch()}>Nuova Ricerca</button>
-                ) : (
-                    <Form 
-                        submit={submit}
-                        title="Ricerca Avanzata"
-                        button="Cerca"
-                        update={false}
-                    />
-                )
-            }
-            {
-                showList ? (
-                    <React.Fragment>
-                        <div className="clients-list-selectors">
-                            <div className="list-filter clients">
-                                <SelectComponent
-                                    options={orderByOptions}
-                                    onChange={(item) => setOrderBy(item)}
-                                    value={orderBy || ""}
-                                    label="Ordina"
-                                />
-                            </div>
-                            <div className="clients-list-sort">
-                                <img src={sortIcon} alt="sort icon" onClick={() => direction === "ASC" ? setDirection("DESC") : setDirection("ASC")} />
-                            </div>
-                        </div>
-                        <ShopsList
-                            list={shopsList} 
-                            formatDate={props.context.actions.formatDate}
+            <div className="advanced-search main">
+                {
+                    showList ? (
+                        <button className="new-search-btn button" onClick={() => newSearch()}>Nuova Ricerca</button>
+                    ) : (
+                        <Form 
+                            submit={submit}
+                            title="Ricerca Avanzata"
+                            button="Cerca"
+                            update={false}
                         />
-                    </React.Fragment>
-                ) : (
-                    null
-                )
-            }
+                    )
+                }
+                {
+                    showList ? (
+                        <React.Fragment>
+                            <div className="clients-list-selectors">
+                                <div className="list-filter clients">
+                                    <SelectComponent
+                                        options={orderByOptions}
+                                        onChange={(item) => setOrderBy(item)}
+                                        value={orderBy || ""}
+                                        label="Ordina"
+                                    />
+                                </div>
+                                <div className="clients-list-sort">
+                                    <img src={sortIcon} alt="sort icon" onClick={() => direction === "ASC" ? setDirection("DESC") : setDirection("ASC")} />
+                                </div>
+                            </div>
+                            <ShopsList
+                                list={shopsList} 
+                                formatDate={props.context.actions.formatDate}
+                            />
+                        </React.Fragment>
+                    ) : (
+                        null
+                    )
+                }
+            </div>
         </React.Fragment>
     )
 }

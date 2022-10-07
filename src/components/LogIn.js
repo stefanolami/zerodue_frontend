@@ -15,7 +15,7 @@ const LogIn = (props) => {
         props.context.actions.logIn(username, password)
             .then(res => {
                 if (res !== null) {
-                    navigate("/")
+                    navigate("/home")
                 } else {
                     setError("Sign in was unsuccessful")
                 }
@@ -37,11 +37,11 @@ const LogIn = (props) => {
                     </div>
                 )
             }
-            <div className="logInDiv">
+            <div className="sign-in-div">
                 <form className="sign-in-form" onSubmit={(e) => submit(e)}>
                     <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} />
                     <input type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
-                    <button type="submit">Log In</button>
+                    <button className="login-btn button" type="submit">Log In</button>
                 </form>
             </div>
         </React.Fragment>

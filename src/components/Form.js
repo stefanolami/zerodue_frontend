@@ -317,7 +317,7 @@ const Form = (props) => {
                         null
                     )
                 }
-                <button className="add-btn" type="submit">{props.button}</button>
+                <button className="form-btn button" type="submit">{props.button}</button>
             </form>
         </div>
     )

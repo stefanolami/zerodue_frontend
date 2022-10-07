@@ -32,12 +32,12 @@ const SearchByPlace = (props) => {
                 <title>ZeroDue - Search by Place</title>
             </Helmet>
             <Navigation />
-            <div className="search-by-place">
+            <div className="search-by-place main">
                 <div className="reg">
                     {
                         Object.keys(regioni.italia).map((reg, index) => {
                             return (
-                                <button onClick={() => showCities(reg, index)} key={index}>{reg}</button>
+                                <button className="button" onClick={() => showCities(reg, index)} key={index}>{reg}</button>
                             )
                         })
                     }
@@ -47,7 +47,7 @@ const SearchByPlace = (props) => {
                         province ? (
                             province.map((prov, index) => {
                                 return (
-                                    <button onClick={() => showShops(prov)} key={index}>{prov}</button>
+                                    <button className="button" onClick={() => showShops(prov)} key={index}>{prov}</button>
                                 )
                             })
                         ) : (

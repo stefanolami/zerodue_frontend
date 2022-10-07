@@ -39,19 +39,21 @@ const LastAddedShops = (props) => {
                 <title>ZeroDue - Last Added</title>
             </Helmet>
             <Navigation />
-            <h2 className="last-added-title">Ultimi Aggiunti</h2>
-            <div className="list-filter">
-            <SelectComponent
-                options={limitOptions}
-                onChange={(item) => setLimit(item)}
-                value={limit || ""}
-                label="Quantità"
-            />
+            <div className="last-added main">
+                <h2 className="last-added-title">Ultimi Aggiunti</h2>
+                <div className="list-filter last">
+                    <SelectComponent
+                        options={limitOptions}
+                        onChange={(item) => setLimit(item)}
+                        value={limit || ""}
+                        label="Quantità"
+                    />
+                </div>
+                <ShopsList 
+                    list={list} 
+                    formatDate={props.context.actions.formatDate}
+                />
             </div>
-            <ShopsList 
-                list={list} 
-                formatDate={props.context.actions.formatDate}
-            />
         </React.Fragment>
     )
 }

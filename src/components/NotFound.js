@@ -28,10 +28,10 @@ const NotFound = () => {
                 <title>ZeroDue - Not Found</title>
             </Helmet>
             <Navigation />
-            <div className="not-found">
+            <div className="not-found main">
                 <h1>Error 404</h1>
                 <h3>Sorry, we couldn't find what you're looking for</h3>
-                <button onClick={goBack}>Back</button>
+                <button className="error-btn button" onClick={goBack}>Back</button>
             </div>
         </React.Fragment>
     )

@@ -61,7 +61,7 @@ const Search = (props) => {
                 <title>ZeroDue - Search</title>
             </Helmet>
             <Navigation />
-            <div className="search">
+            <div className="search main">
                 <form className="search-div" spellCheck="false" onSubmit={(e) => searchShops(e, query)}>
                     <input type="text" className="search-input" placeholder="Search" onChange={(e) => setQuery(e.target.value)} />
                     <button type="submit" className="search-btn"><img src={searchIcon} alt="Search icon" className="searchIcon" /></button>

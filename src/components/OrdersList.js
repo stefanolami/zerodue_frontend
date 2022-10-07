@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const OrdersList = (props) => {
 
     return (
-        <div className="orders-list">
+        <div className="orders-list main">
             {
                 props.list ? (
                     <Table striped bordered hover>

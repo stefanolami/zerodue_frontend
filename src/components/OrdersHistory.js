@@ -44,7 +44,7 @@ const OrdersHistory = (props) => {
                 <title>{`ZeroDue - ${name} - Orders History`}</title>
             </Helmet>
             <Navigation />
-            <div className="orders-history">
+            <div className="orders-history main">
                 <Link to={`/shop/${id}`}><h3>{name}</h3></Link>
                 <h4>Storico Ordini</h4>
                 <OrdersList 
@@ -52,7 +52,7 @@ const OrdersHistory = (props) => {
                     formatDate={props.context.actions.formatDate}
                 />
                 <Link to={`/add-order/${id}`}>
-                    <button className="add-order-btn">Aggiungi Ordine</button>
+                    <button className="add-order-btn button">Aggiungi Ordine</button>
                 </Link>
             </div>
         </React.Fragment>

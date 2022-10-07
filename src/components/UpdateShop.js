@@ -62,16 +62,18 @@ const UpdateShop = (props) => {
                 ) : null
             }
             <Navigation />
-            <Form
-                submit={submit}
-                errors={errors}
-                id={id}
-                getShop={props.context.actions.getShop}
-                title="Aggiorna Negozio"
-                button="Aggiorna"
-                update={true}
-                submitted={submitted}
-            />
+            <div className="update-shop main">
+                <Form
+                    submit={submit}
+                    errors={errors}
+                    id={id}
+                    getShop={props.context.actions.getShop}
+                    title="Aggiorna Negozio"
+                    button="Aggiorna"
+                    update={true}
+                    submitted={submitted}
+                />
+            </div>
         </React.Fragment>
         
     )

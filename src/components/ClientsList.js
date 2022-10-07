@@ -43,7 +43,7 @@ const ClientsList = (props) => {
                 <title>ZeroDue - Clients List</title>
             </Helmet>
             <Navigation />
-            <div className="clients-list">
+            <div className="clients-list main">
                 <h2 className="clients-list-title">Lista Clienti</h2>
                 <div className="clients-list-selectors">
                     <div className="list-filter clients">
